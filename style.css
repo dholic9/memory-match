@@ -1,0 +1,83 @@
+body{
+margin: 0px;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+header{
+  height: 18vh;
+  background-color: pink;
+  color:red;
+  text-align: center;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+
+}
+
+aside{
+  height: 90vh;
+  width: 20vw;
+  background-color: blue;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+}
+
+
+main{
+  height: 90vh;
+  width: 79vw;
+  background-color: violet;
+  display: flex;
+  margin: 0;
+}
+header, aside, main{
+    border: 1px solid black;
+}
+.game-container{
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card, .front, .back{
+  height:25vh;
+  width: 11vw;
+  border-radius: 3%;
+  margin: 1px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+}
+.card{
+}
+
+.back{
+  background-image: url(../js_dom_creation/images/card-back.jpg);
+  position: absolute;
+}
+
+.front{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg");
+}
+
+.pup{
+  background-image: url("http://corgiguide.com/wp-content/uploads/2014/07/6342530545_45ec8696c8_z.jpg");
+}
+.hidden{
+  display: none;
+}
