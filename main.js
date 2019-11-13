@@ -7,6 +7,8 @@ var attempts = 0;
 var games_played = 0;
 var max_matches = 9;
 
+
+
 function intializeApp(){
   var card = $('.card');
   card.click(handleCardClick);
@@ -54,7 +56,7 @@ function handleCardClick(event){
 
 function calculateAccuracy(){
     var totalAccuracy = Math.floor((matches/attempts)*100);
-    var roundedAccuracy = totalAccuracy.toFixed(0);
+    var roundedAccuracy = totalAccuracy;
     return roundedAccuracy;
 }
 
@@ -68,7 +70,11 @@ function resetStats(){
 function displayStats(){
   var percentAccuracy = calculateAccuracy();
 
+  if(!percentAccuracy){
+    percentAccuracy = 0;
+  }
+
   $("#numGamesPlayed").text(games_played);
   $("#numAttempts").text(attempts);
-  $("#numAccuracy").text(percentAccuracy);
+  $("#numAccuracy").text(percentAccuracy + "%");
 }

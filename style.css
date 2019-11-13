@@ -1,7 +1,15 @@
-body{
-margin: 0px;
+body *{
+  margin: 0px;
+  box-sizing: border-box;
 }
-
+body{
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: black;
+  background-image: url("https://cdn.wallpapersafari.com/20/92/72JEI9.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .container{
   height: 100%;
   width: 100%;
@@ -13,46 +21,47 @@ margin: 0px;
 }
 
 header{
-  height: 18vh;
-  background-color: pink;
-  color:red;
+  height: 15vh;
+  color:ghostwhite;
   text-align: center;
   font-size: 2rem;
   display: flex;
   justify-content: center;
-
 }
-
+h1{
+    margin: auto;
+}
+.statsContainer{
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 aside{
-  height: 90vh;
-  width: 20vw;
-  background-color: blue;
-  color: white;
-  font-size: 20px;
+  height: 100%;
+  width: 20%;
+  color: ghostwhite;
+  font-size: 28px;
   text-align: center;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   flex-direction: column;
 }
-
-
 main{
-  height: 90vh;
-  width: 79vw;
-  background-color: violet;
+  height: 100%;
+  width: 80%;
   display: flex;
   margin: 0;
 }
 header, aside, main{
-    border: 1px solid black;
+    border: 1px solid ghostwhite;
 }
 .game-container{
-  height: 90vh;
+  height: 82vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .card, .front, .back{
   height:25vh;
   width: 11vw;
@@ -67,7 +76,7 @@ header, aside, main{
 }
 
 .back{
-  background-image: url(../js_dom_creation/images/card-back.jpg);
+  background-image: url(../prototypes_fi_part1/js_dom_creation/images/card-back.jpg);
   position: absolute;
 }
 
