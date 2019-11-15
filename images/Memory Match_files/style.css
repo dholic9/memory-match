@@ -51,9 +51,8 @@ aside{
 /* Modal  */
 #ex1{
   height: 250px;
-  width: 500px;
-  font-size: 25px;
-  background-color: thistle;
+  width: 300px;
+  font: 20px;
   color: black;
   text-align: center;
   justify-content: center;
