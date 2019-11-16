@@ -12,6 +12,7 @@ var max_matches = 9;
 function intializeApp(){
   var card = $('.card');
   card.click(handleCardClick);
+
   var resetButton = $('.resetButton');
   resetButton.on("click", resetGame);
   resetButton.on("click", displayStats);
@@ -41,7 +42,7 @@ function handleCardClick(event){
         matches++;
         attempts++;
       } else {
-          console.log("cards did not match!SS");
+          console.log("cards did not match!");
           attempts++;
           setTimeout(function() {
             // $(firstCardClicked).find(".back").removeClass('hidden');
@@ -55,6 +56,7 @@ function handleCardClick(event){
       if(matches === max_matches){
       resetStats();
       openModal();
+      $("div.container div").removeClass("flip");
     }
     displayStats();
   }
@@ -102,3 +104,29 @@ function displayStats(){
 function shuffle(array){
   array.sort(() => Math.random() - 0.5);
 }
+
+
+var classArray = [
+  "aya",
+  "aya",
+  "boom",
+  "boom",
+  "glassKnight",
+  "glassKnight",
+  "jaraxxus",
+  "jaraxxus",
+  "varian",
+  "varian",
+  "zuljin",
+  "zuljin",
+  "lich",
+  "lich",
+  "toki",
+  "toki",
+  "inquisitor",
+  "inquisitor",
+]
+
+
+shuffle(classArray);
+console.table(classArray);

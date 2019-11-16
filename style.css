@@ -3,7 +3,7 @@ body *{
   box-sizing: border-box;
 }
 body{
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Bellefair', serif;
   background-color: black;
   background-image: url("images/Background1.jpg");
   background-size: cover;
@@ -22,7 +22,9 @@ header{
   justify-content: center;
 }
 h1{
-    margin: auto;
+    margin: 10px 0px 0px 0px;
+    font-size: 35px;
+
 }
 .statsContainer{
   padding-top: 50px;
@@ -50,14 +52,26 @@ aside{
 }
 /* Modal  */
 #ex1{
-  height: 250px;
-  width: 500px;
-  font-size: 25px;
-  background-color: thistle;
-  color: black;
+  height: 14%;
+  width: 19%;
+  font-size: 34px;
+  /* background-image: url(""); */
+  color: white;
   text-align: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.616);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.blocker{
+  background-image: url("images/fireflies.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.modalDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* main container and game */
@@ -88,9 +102,9 @@ main{
 
 .card{
 
-  height:28%;
-  width: 14%;
-  margin: 3px;
+  height: 30%;
+  width: 10%;
+  margin: 0px 25px 0px 25px;
 
 }
 
@@ -104,7 +118,7 @@ main{
   position: relative;
   text-align: center;
   transform-style:preserve-3d;
-  transition: transform 0.8s;
+  transition: transform 0.6s;
 
 }
 
@@ -133,8 +147,32 @@ main{
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg");
   transform: rotateY(180deg);
 }
-.pup{
-  background-image: url("http://corgiguide.com/wp-content/uploads/2014/07/6342530545_45ec8696c8_z.jpg");
+.aya{
+  background-image: url("images/Aya_Blackpaw\(49706\).png");
+}
+.boom{
+  background-image: url(images/Dr._Boom\(12182\).png);
+}
+.glassKnight{
+  background-image: url(images/The_Glass_Knight\(89411\).png);
+}
+.jaraxxus{
+  background-image: url(images/Lord_Jaraxxus\(482\).png);
+}
+.varian{
+  background-image: url(images/Varian_Wrynn\(22342\).png);
+}
+.zuljin{
+  background-image: url("images/Zul\'jin\(90248\).png");
+}
+.lich{
+  background-image: url("images/The_Lich_King\(62922\).png");
+}
+.toki{
+  background-image: url("images/Toki\,_Time-Tinker\(89406\).png");
+}
+.inquisitor{
+  background-image: url("images/High_Inquisitor_Whitemane\(90686\).png");
 }
 .hidden{
   visibility: hidden;
@@ -143,7 +181,7 @@ main{
 /* NavBar */
 .topnav {
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   height:50%;
   width: 100%;
 }
