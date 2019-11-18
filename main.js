@@ -8,7 +8,6 @@ var games_played = 0;
 var max_matches = 9;
 
 
-
 function intializeApp(){
   var card = $('.card');
   card.click(handleCardClick);
@@ -19,14 +18,12 @@ function intializeApp(){
   resetButton.on("click", displayStats);
 }
 
-
 function handleCardClick(event){
   console.log(event);
   var currentCard = $(event.currentTarget);
   currentCard.addClass('flip');
 
   // currentCard.find(".back").addClass('hidden');
-
 
   if(!firstCardClicked) {
     firstCardClicked = $(event.currentTarget);
@@ -61,8 +58,6 @@ function handleCardClick(event){
     }
     displayStats();
   }
-
-
 }
 
 function openModal(){
