@@ -12,7 +12,8 @@ var max_matches = 9;
 function intializeApp(){
   var card = $('.card');
   card.click(handleCardClick);
-
+  // var shuffleButton = $('.shuffle');
+  // shuffleButton.on("click", shuffleCards);
   var resetButton = $('.resetButton');
   resetButton.on("click", resetGame);
   resetButton.on("click", displayStats);
@@ -128,5 +129,23 @@ var classArray = [
 ]
 
 
-shuffle(classArray);
-console.table(classArray);
+// function shuffleCards(){
+//   $(".container div").remove();
+//   shuffle(classArray);
+//   console.table(classArray);
+// for(var i=0;i<classArray.length;i++){
+//     var frontDiv = $("<div>").addClass('front');
+//   var backDiv = $("<div>").addClass('back');
+//   var innerDiv = $("<div>").addClass('card-inner');
+//   var cardDiv = $("<div>").addClass('card');
+
+
+//   innerDiv.append(frontDiv);
+//   innerDiv.append(backDiv);
+//   cardDiv.append(innerDiv);
+//   $(frontDiv).addClass(classArray[i]);
+//   $(".container").append(cardDiv);
+
+// }
+
+// }
