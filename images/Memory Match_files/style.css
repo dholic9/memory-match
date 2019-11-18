@@ -1,0 +1,213 @@
+body *{
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Bellefair', serif;
+  background-color: black;
+  background-image: url("images/Background1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0px;
+}
+
+header{
+  height: 15vh;
+  width: 100%;
+  color:ghostwhite;
+  text-align: center;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+}
+h1{
+    margin: 10px 0px 0px 0px;
+    font-size: 35px;
+
+}
+.statsContainer{
+  padding-top: 50px;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.statsContainer div{
+  display:flex;
+  height:13%;
+  justify-content: center;
+  align-items: center;
+
+}
+aside{
+  height: 100%;
+  width: 17%;
+  color: ghostwhite;
+  font-size: 24px;
+  text-align: center;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+/* Modal  */
+#ex1{
+  height: 14%;
+  width: 19%;
+  font-size: 40px;
+  /* background-image: url(""); */
+  color: white;
+  text-align: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+.blocker{
+  background-image: url("images/fireflies.gif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+}
+.modalDiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* main container and game */
+main{
+  height: 100%;
+  width: 80%;
+  display: flex;
+  margin: 0;
+}
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  perspective: 1000px;
+  background-color: transparent;
+}
+
+.game-container{
+  height: 82vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card{
+
+  height: 30%;
+  width: 10%;
+  margin: 0px 25px 0px 25px;
+
+}
+
+.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  transform-style:preserve-3d;
+  transition: transform 0.6s;
+
+}
+
+.front, .back {
+  height: 100%;
+  width: 100%;
+  border-radius: 3%;
+  backface-visibility: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+}
+.card:hover{
+  transition:transform 0.6s;
+  transform: scale(1.2);
+  z-index: 800;
+}
+
+
+.back{
+  background-image: url(images/icon2.png);
+
+}
+.front{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/2/2b/WelshCorgi.jpeg");
+  transform: rotateY(180deg);
+}
+.aya{
+  background-image: url("images/Aya_Blackpaw\(49706\).png");
+}
+.boom{
+  background-image: url(images/Dr._Boom\(12182\).png);
+}
+.glassKnight{
+  background-image: url(images/The_Glass_Knight\(89411\).png);
+}
+.jaraxxus{
+  background-image: url(images/Lord_Jaraxxus\(482\).png);
+}
+.varian{
+  background-image: url(images/Varian_Wrynn\(22342\).png);
+}
+.zuljin{
+  background-image: url("images/Zul\'jin\(90248\).png");
+}
+.lich{
+  background-image: url("images/The_Lich_King\(62922\).png");
+}
+.toki{
+  background-image: url("images/Toki\,_Time-Tinker\(89406\).png");
+}
+.inquisitor{
+  background-image: url("images/High_Inquisitor_Whitemane\(90686\).png");
+}
+.hidden{
+  visibility: hidden;
+}
+
+/* NavBar */
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+  height:50%;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+
+/* #myVideo{
+  width:100%;
+  height:auto;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -2;
+} */
