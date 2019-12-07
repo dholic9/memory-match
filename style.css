@@ -58,13 +58,13 @@ aside{
 /* Modal  */
 #ex1{
   height: 14%;
-  width: 19%;
+  width: 20%;
   font-size: 34px;
   /* background-image: url(""); */
-  color: white;
+  color: black;
   text-align: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
 .blocker{
@@ -101,16 +101,17 @@ main{
 }
 
 .game-container{
-  height: 82vh;
+  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card{
-  height: 26vh;
+  height: 31%;
   width: 11%;
-  margin: 0px 25px 0px 25px;
+  margin: 0px 2% 0px 2%;
+  cursor: pointer;
 }
 
 .flip .card-inner {
@@ -139,15 +140,17 @@ main{
 
 .card:hover{
   transition:transform 0.6s;
-  transform: scale(1.2);
+  transform: scale(1.35);
   z-index: 800;
 }
 
 .back{
   background-image: url(images/animatedCard3.gif);
+  background-size: contain;
 }
 .front{
   transform: rotateY(180deg);
+  background-size: contain;
 }
 .aya{
   background-image: url("images/Aya_Blackpaw\(49706\).png");
@@ -184,7 +187,7 @@ main{
 .topnav {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
-  height:50%;
+  height:57px;
   width: 100%;
 }
 
@@ -195,6 +198,7 @@ main{
   padding: 14px 16px;
   text-decoration: none;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .topnav a:hover {
@@ -213,3 +217,15 @@ main{
   min-height: 100%;
   z-index: -2;
 } */
+
+
+
+@media only screen and (max-width: 1100px){
+  aside{
+    display:none;
+    width: 0;
+  }
+  main{
+    width: 100%;
+  }
+}

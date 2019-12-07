@@ -1,5 +1,4 @@
 $(document).ready(intializeApp);
-
 var firstCardClicked = null;
 var secondCardClicked = null;
 var matches = 0;
@@ -9,17 +8,24 @@ var max_matches = 9;
 
 
 function intializeApp(){
+
+  shuffleAndCreateCards();
+
   var card = $('.card');
+  card.off('click');
   card.click(handleCardClick);
-  // var shuffleButton = $('.shuffle');
-  // shuffleButton.on("click", shuffleCards);
+  var shuffleButton = $('.shuffle');
+  shuffleButton.off('click');
+  shuffleButton.on("click", shuffleCards);
   var resetButton = $('.resetButton');
+  resetButton.off('click');
   resetButton.on("click", resetGame);
   resetButton.on("click", displayStats);
+
 }
 
 function handleCardClick(event){
-  console.log(event);
+
   var currentCard = $(event.currentTarget);
   currentCard.addClass('flip');
 
@@ -49,19 +55,21 @@ function handleCardClick(event){
             secondCardClicked.removeClass("flip");
             firstCardClicked = null;
             secondCardClicked = null;
-            }, 1000);
+            }, 850);
         }
       if(matches === max_matches){
-      resetStats();
       openModal();
-      $("div.container div").removeClass("flip");
+      setTimeout(function(){
+        resetStats();
+        $("div.container div").removeClass("flip");
+      });
     }
     displayStats();
   }
 }
 
 function openModal(){
-  $('#ex1').modal();
+  setTimeout(function(){$('#ex1').modal()}, 1000);
 }
 
 function calculateAccuracy(){
@@ -74,15 +82,19 @@ function resetStats(){
   matches = 0;
   attempts = 0;
   games_played++;
-  $(".back").removeClass("flip");
+  // games_played = 0
+  firstCardClicked = null;
+  secondCardClicked = null;
+  $(".card").removeClass("flip");
 }
 
 function resetGame(){
   matches = 0;
   attempts = 0;
   games_played = 0;
+  firstCardClicked = null;
+  secondCardClicked = null;
   $("div.container div").removeClass("flip");
-  // secondCardClicked.removeClass("flip");
 }
 
 function displayStats(){
@@ -91,7 +103,7 @@ function displayStats(){
   if(!percentAccuracy){
     percentAccuracy = 0;
   }
-
+s
   $("#numGamesPlayed").text(games_played);
   $("#numAttempts").text(attempts);
   $("#numAccuracy").text(percentAccuracy + "%");
@@ -99,6 +111,7 @@ function displayStats(){
 
 function shuffle(array){
   array.sort(() => Math.random() - 0.5);
+  return array;
 }
 
 
@@ -124,23 +137,31 @@ var classArray = [
 ]
 
 
-// function shuffleCards(){
-//   $(".container div").remove();
-//   shuffle(classArray);
-//   console.table(classArray);
-// for(var i=0;i<classArray.length;i++){
-//     var frontDiv = $("<div>").addClass('front');
-//   var backDiv = $("<div>").addClass('back');
-//   var innerDiv = $("<div>").addClass('card-inner');
-//   var cardDiv = $("<div>").addClass('card');
+function shuffleCards(){
+  $("div.container div").removeClass("flip");
+  setTimeout(function(){
+    // $(".container").empty();
 
+    intializeApp();
+    resetStats();
+    displayStats();
+  }, 350)
+}
 
-//   innerDiv.append(frontDiv);
-//   innerDiv.append(backDiv);
-//   cardDiv.append(innerDiv);
-//   $(frontDiv).addClass(classArray[i]);
-//   $(".container").append(cardDiv);
+function shuffleAndCreateCards(){
+  shuffle(classArray);
+  $('.container').empty();
+  for (var i = 0; i < classArray.length; i++) {
+    var frontDiv = $("<div>").addClass(`front ${classArray[i]}`);
+    var backDiv = $("<div>").addClass('back');
+    var innerDiv = $("<div>").addClass('card-inner');
+    var cardDiv = $("<div>").addClass('card');
+    innerDiv.append(frontDiv, backDiv);
+    cardDiv.append(innerDiv);
+    $(".container").append(cardDiv);
+  }
+}
 
-// }
-
-// }
+function gameStart(){
+  initializeApp();
+}
