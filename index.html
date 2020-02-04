@@ -14,17 +14,15 @@
 
 
 </head>
-<body>
-  <header>
-    <div class="topnav">
-      <a>Home</a>
-      <a class="shuffle">Shuffle</a>
-      <a href="#" class="resetButton">Reset</a>
-      <h1 id="title" >Memory Match</h1>
-    </div>
-  </header>
-
-  <div class="game-container">
+  <body>
+    <header>
+      <div class="topnav">
+        <a class="shuffle">Shuffle</a>
+        <a href="#" class="resetButton">Reset</a>
+        <h1 id="title" >Memory Match</h1>
+      </div>
+    </header>
+    <div class="game-container">
       <aside>
         <div class="statsContainer">
           <h2><u>Stats</u></h2>
@@ -35,21 +33,26 @@
           <div>Accuracy</div>
           <div id="numAccuracy">0%</div>
         </div>
-          <div class="modalDiv">
-            <div id="ex1" class="modal">
-            <p>You Win!</p>
-            <a rel="modal:close"></a>
-          </div>
+        <div class="modalDiv">
+          <div id="ex1" class="modal">
+          <p>You Win!</p>
+          <a rel="modal:close"></a>
         </div>
+      </div>
       </aside>
       <main>
         <div class="container">
         </div>
       </main>
-  </div>
+    </div>
+    <div class="startModal hidden">
+      <div class="modalContent">
+        <div>Hearthstone Memory Match</div>
+        <div class="startModalClose"></div>
+      </div>
+    </div>
 
-
-</body>
+  </body>
 
 
 </html>

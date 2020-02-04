@@ -14,7 +14,7 @@ body{
 }
 
 header{
-  height: 15vh;
+  height: 100%;
   width: 100%;
   color:ghostwhite;
   text-align: center;
@@ -23,36 +23,74 @@ header{
   justify-content: center;
 }
 
-h1{
-    margin: 10px 0px 0px 0px;
-    font-size: 36px
-}
 
 .statsContainer{
-  padding-top: 50px;
+  background-color: rgba(0,0,0,0.45);
+  margin-top: 12%;
   height: 70%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
-
-.statsContainer div{
-  display:flex;
-  height:13%;
-  justify-content: center;
   align-items: center;
-
 }
 
 aside{
   height: 100%;
   width: 17%;
   color: ghostwhite;
-  font-size: 24px;
+  font-size: 2.5rem;
   text-align: center;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
+}
+
+
+/** main container and game */
+
+main{
+  height: 100%;
+  width: 80%;
+  display: flex;
+  margin: 0;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container{
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/**       NavBar       */
+.topnav {
+  font-size: 2rem;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 40%;
+  width: 100%;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
 /* Modal  */
@@ -60,7 +98,6 @@ aside{
   height: 14%;
   width: 20%;
   font-size: 34px;
-  /* background-image: url(""); */
   color: black;
   text-align: center;
   justify-content: center;
@@ -80,37 +117,37 @@ aside{
   justify-content: center;
 }
 
-/* main container and game */
-main{
-  height: 100%;
-  width: 80%;
-  display: flex;
-  margin: 0;
-}
-
-.container{
+.startModal{
   height: 100%;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display:flex;
+  position: fixed;
+  font-size: 3rem;
+  text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  perspective: 1000px;
-  background-color: transparent;
+  background-color: black;
+  opacity: 0.9;
+  z-index: 2;
+  top: 0;
 }
-
-.game-container{
-  height: 80vh;
+.modalContent{
+  height: 50%;
+  width: 50%;
   display: flex;
+  opacity: 1 ;
+  background-color: white;
+  opacity: initial;
+  text-align: center;
   justify-content: center;
   align-items: center;
+
 }
 
 .card{
   height: 31%;
-  width: 11%;
-  margin: 0px 2% 0px 2%;
+  width: 15%;
+  padding: 0 4px;
   cursor: pointer;
 }
 
@@ -183,30 +220,10 @@ main{
   visibility: hidden;
 }
 
-/* NavBar */
-.topnav {
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.5);
-  height:57px;
-  width: 100%;
+
+.hide {
+  display: none;
 }
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
 /* #myVideo{
   width:100%;
   height:auto;
@@ -218,12 +235,39 @@ main{
   z-index: -2;
 } */
 
-
+/*      iPhone X   */
 
 @media only screen and (max-width: 1100px){
+  body{
+    background-position: center
+  }
+  .game-container{
+    display: flex;
+    flex-direction: column;
+  }
+  .container{
+    margin-top: 4%;
+  }
   aside{
-    display:none;
-    width: 0;
+    height: 7vh;
+    width: 100%;
+    flex-direction: row;
+  }
+  .statsContainer > h2 {
+    display:none
+  }
+  .topnav{
+    font-size: 3rem;
+  }
+  .statsContainer{
+    margin: 0;
+    height: 8vh;
+    width: 100%;
+    flex-direction: row;
+  }
+  .card{
+    width: 32%;
+    padding: 0;
   }
   main{
     width: 100%;
