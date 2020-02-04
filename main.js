@@ -87,6 +87,7 @@ function resetGame(){
   firstCardClicked = null;
   secondCardClicked = null;
   $("div.container div").removeClass("flip");
+  displayStats()
 }
 
 function displayStats(){
