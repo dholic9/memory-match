@@ -25,20 +25,15 @@ function intializeApp(){
 }
 
 function handleCardClick(event){
-
   var currentCard = $(event.currentTarget);
   currentCard.addClass('flip');
 
-  // currentCard.find(".back").addClass('hidden');
-
   if(!firstCardClicked) {
     firstCardClicked = $(event.currentTarget);
-
   } else if(!secondCardClicked){
     secondCardClicked = $(event.currentTarget);
     var firstCardImage = firstCardClicked.find('.front').css('background-image');
     var secondCardImage = secondCardClicked.find('.front').css('background-image');
-
       if(firstCardImage == secondCardImage){
         console.log("cards match!");
         firstCardClicked = null;
@@ -49,14 +44,12 @@ function handleCardClick(event){
           console.log("cards did not match!");
           attempts++;
           setTimeout(function() {
-            // $(firstCardClicked).find(".back").removeClass('hidden');
-            // $(secondCardClicked).find(".back").removeClass('hidden');
             firstCardClicked.removeClass("flip");
             secondCardClicked.removeClass("flip");
             firstCardClicked = null;
             secondCardClicked = null;
-            }, 850);
-        }
+          }, 850);
+      }
       if(matches === max_matches){
       openModal();
       setTimeout(function(){
@@ -82,7 +75,6 @@ function resetStats(){
   matches = 0;
   attempts = 0;
   games_played++;
-  // games_played = 0
   firstCardClicked = null;
   secondCardClicked = null;
   $(".card").removeClass("flip");
@@ -103,7 +95,7 @@ function displayStats(){
   if(!percentAccuracy){
     percentAccuracy = 0;
   }
-s
+
   $("#numGamesPlayed").text(games_played);
   $("#numAttempts").text(attempts);
   $("#numAccuracy").text(percentAccuracy + "%");
@@ -113,7 +105,6 @@ function shuffle(array){
   array.sort(() => Math.random() - 0.5);
   return array;
 }
-
 
 var classArray = [
   "aya",
@@ -140,8 +131,6 @@ var classArray = [
 function shuffleCards(){
   $("div.container div").removeClass("flip");
   setTimeout(function(){
-    // $(".container").empty();
-
     intializeApp();
     resetStats();
     displayStats();
