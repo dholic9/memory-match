@@ -16,6 +16,8 @@ Try the application live at
 ## Features
 
 - User can win by matching all the card pairs.
+- User can shuffle cards.
+- User can reset the game.
 
 ## Preview
 
@@ -32,8 +34,3 @@ Try the application live at
     ```shell
     Open the index.html file in browser
     ```
-
-
-
-- Shuffling cards
-- Dynamically creating cards
