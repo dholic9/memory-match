@@ -240,8 +240,9 @@ main{
 } */
 
 /*      iPhone X      */
-/*        Ipad      */
-/* portrait */
+/*        Ipad        */
+
+/*      portrait      */
 
 @media only screen and (max-width: 1000px) {
   body{
@@ -320,6 +321,7 @@ main{
 }
 
 /* landscape */
+
 @media only screen and (max-width: 1024px) and (max-height: 820px) {
   body{
     background-position: center
