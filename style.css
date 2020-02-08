@@ -45,7 +45,7 @@ aside{
   flex-direction: column;
 }
 .title{
-  font-size: 5rem;
+  font-size: 4rem;
 
 }
 
@@ -280,6 +280,12 @@ main{
   main{
     width: 100%;
   }
+  .title{
+    font-size: 3.5rem;
+  }
+  .topnav{
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (max-width: 820px) and (max-height: 1024px) {
@@ -303,7 +309,7 @@ main{
   }
   .topnav{
     height: 7vh;
-    font-size: 4rem;
+    font-size: 3rem;
   }
   .statsContainer{
     margin: 0;
