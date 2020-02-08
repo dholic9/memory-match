@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-Try the application live at 
+Try the application live at [https://hearthstone.davidjinhong.com](https://hearthstone.davidjinhong.com)
 
 ## Features
 
@@ -21,7 +21,7 @@ Try the application live at
 
 ## Preview
 
-
+![memory-match](/images/Preview.png)
 
 ## Development
 
