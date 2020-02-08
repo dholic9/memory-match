@@ -21,7 +21,7 @@ Try the application live at
 
 ## Preview
 
-
+![alt text](/images/Preview.png "Logo Title Text 1")
 
 ## Development
 
