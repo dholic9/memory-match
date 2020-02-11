@@ -243,7 +243,7 @@ main{
     flex-direction: column;
   }
   .container{
-    margin-top: 4%;
+    margin-top: 2%;
   }
   aside{
     height: 7vh;
@@ -264,7 +264,7 @@ main{
     flex-direction: row;
   }
   .card{
-    height: 18%;
+    height: 19%;
     width: 32%;
     padding: 0;
   }
