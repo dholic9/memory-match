@@ -8,13 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Bellefair&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-
 </head>
   <body>
     <header>
       <div class="topnav">
         <a class="shuffle">Shuffle</a>
-        <a href="#" class="resetButton">Reset</a>
+        <!-- <a href="#" class="resetButton">Reset</a> -->
         <div class="title">Memory Match</div>
       </div>
     </header>
@@ -44,7 +43,7 @@
     <div class="startModal hidden">
       <div class="modalContent">
         <div>Hearthstone Memory Match</div>
-        <div class="startModalClose"></div>
+        <button type="button" onclick="closeStartModal"></button>
       </div>
     </div>
 

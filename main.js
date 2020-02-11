@@ -35,13 +35,11 @@ function handleCardClick(event){
     var firstCardImage = firstCardClicked.find('.front').css('background-image');
     var secondCardImage = secondCardClicked.find('.front').css('background-image');
       if(firstCardImage == secondCardImage){
-        console.log("cards match!");
         firstCardClicked = null;
         secondCardClicked = null;
         matches++;
         attempts++;
       } else {
-          console.log("cards did not match!");
           attempts++;
           setTimeout(function() {
             firstCardClicked.removeClass("flip");
@@ -87,7 +85,8 @@ function resetGame(){
   firstCardClicked = null;
   secondCardClicked = null;
   $("div.container div").removeClass("flip");
-  displayStats()
+
+  displayStats();
 }
 
 function displayStats(){
@@ -154,4 +153,8 @@ function shuffleAndCreateCards(){
 
 function gameStart(){
   initializeApp();
+}
+
+function closeStartModal(){
+  $('.startModal').addClass('hidden')
 }
