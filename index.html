@@ -28,25 +28,25 @@
           <div>Accuracy</div>
           <div id="numAccuracy">0%</div>
         </div>
-        <div class="modalDiv">
-          <div id="ex1" class="modal">
-          <p>You Win!</p>
-          <a rel="modal:close"></a>
-        </div>
-      </div>
       </aside>
       <main>
         <div class="container">
         </div>
       </main>
     </div>
-    <div class="startModal hidden">
-      <div class="modalContent">
-        <div>Hearthstone Memory Match</div>
-        <button type="button" onclick="closeStartModal"></button>
+    <div id="win-modal" class="modal hidden" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          </div>
+          <div class="modal-body">
+            <p>You have won!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="closeWinModal()" class="btn btn-close" data-dismiss="modal">Play Again</button>
+          </div>
+        </div>
       </div>
     </div>
-
   </body>
 
 

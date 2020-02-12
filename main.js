@@ -6,7 +6,6 @@ var attempts = 0;
 var games_played = 0;
 var max_matches = 9;
 
-
 function intializeApp(){
 
   shuffleAndCreateCards();
@@ -49,18 +48,19 @@ function handleCardClick(event){
           }, 850);
       }
       if(matches === max_matches){
-      openModal();
-      setTimeout(function(){
-        resetStats();
-        $("div.container div").removeClass("flip");
-      });
+      openWinModal();
     }
     displayStats();
   }
 }
 
-function openModal(){
-  setTimeout(function(){$('#ex1').modal()}, 1000);
+function openWinModal(){
+  setTimeout(function(){$('#win-modal').removeClass('hidden')}, 100);
+}
+function closeWinModal(){
+  console.log('fired')
+  resetStats();
+  $("#win-modal").addClass('hidden')
 }
 
 function calculateAccuracy(){
@@ -135,6 +135,7 @@ function shuffleCards(){
     resetStats();
     displayStats();
   }, 350)
+  $('#win-modal').addClass('hidden')
 }
 
 function shuffleAndCreateCards(){
@@ -153,8 +154,4 @@ function shuffleAndCreateCards(){
 
 function gameStart(){
   initializeApp();
-}
-
-function closeStartModal(){
-  $('.startModal').addClass('hidden')
 }
