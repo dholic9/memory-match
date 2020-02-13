@@ -5,11 +5,11 @@ var matches = 0;
 var attempts = 0;
 var games_played = 0;
 var max_matches = 9;
+var card = null;
 
 function intializeApp(){
   shuffleAndCreateCards();
-  var card = $('.card');
-  card.off('click');
+  card = $('.card');
   card.click(handleCardClick);
   var shuffleButton = $('.shuffle');
   shuffleButton.off('click');
@@ -26,22 +26,27 @@ function handleCardClick(event){
 
   if(!firstCardClicked) {
     firstCardClicked = $(event.currentTarget);
+    firstCardClicked.addClass("unclickable");
   } else if(!secondCardClicked){
+    card.off();
     secondCardClicked = $(event.currentTarget);
     var firstCardImage = firstCardClicked.find('.front').css('background-image');
     var secondCardImage = secondCardClicked.find('.front').css('background-image');
       if(firstCardImage == secondCardImage){
+        secondCardClicked.addClass("unclickable");
         firstCardClicked = null;
         secondCardClicked = null;
         matches++;
         attempts++;
+        card.click(handleCardClick);
       } else {
           attempts++;
           setTimeout(function() {
-            firstCardClicked.removeClass("flip");
-            secondCardClicked.removeClass("flip");
+            firstCardClicked.removeClass("flip unclickable");
+            secondCardClicked.removeClass("flip unclickable");
             firstCardClicked = null;
             secondCardClicked = null;
+            card.click(handleCardClick);
           }, 600);
       }
       if(matches === max_matches){
@@ -55,7 +60,7 @@ function openWinModal(){
   setTimeout(function(){$('#win-modal').removeClass('hidden')}, 100);
 }
 function closeWinModal(){
-  resetStats();
+  playAgain();
   $("#win-modal").addClass('hidden')
 }
 
@@ -65,6 +70,17 @@ function calculateAccuracy(){
     return roundedAccuracy;
 }
 
+function playAgain(){
+  matches = 0;
+  attempts = 0;
+  games_played++;
+  firstCardClicked = null;
+  secondCardClicked = null;
+  shuffleAndCreateCards();
+  displayStats();
+  card = $('.card');
+  card.click(handleCardClick);
+}
 function resetStats(){
   matches = 0;
   attempts = 0;

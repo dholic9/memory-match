@@ -52,6 +52,10 @@ aside{
 
 }
 
+.unclickable {
+  pointer-events: none;
+}
+
 /** main container and game */
 
 main{
@@ -112,7 +116,6 @@ main{
   top: 27vh;
   flex-direction: row;
   background: rgba(255, 255, 255, 0.95) !important;
-  /* box-shadow: 10px 3px 7px rgb(201, 177, 177); */
   border: 3px solid rgb(205, 171, 1);
 }
 .shadow {
@@ -121,12 +124,17 @@ main{
   box-shadow:         10px 10px 10px 10px rgba(52, 52, 52, 0.726) !important;
 }
 .btn-close {
-  position: relative;
-  left: 35%;
+  border-radius: 5px;
+  font-size: 2rem;
+  background: rgb(45, 45, 45);
+  color: white;
 }
 .modal-body {
   justify-content: center;
   font-size: 3rem;
+}
+.modal-footer {
+  text-align: center;
 }
 .close{
   position: absolute;
@@ -267,6 +275,20 @@ main{
   }
   .topnav{
     font-size: 4rem;
+  }
+  .modal{
+    left: 25%;
+    font-size: 2rem;
+  }
+}
+
+/**  iphone 6/7/8    LANDSCAPE  */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 667px)
+and (orientation : landscape) {
+  .modal{
+    left: 24%;
   }
 }
 
@@ -413,6 +435,9 @@ main{
   }
   .topnav{
     font-size: 4rem;
+  }
+  .modal {
+    left: 25%;
   }
 }
 
