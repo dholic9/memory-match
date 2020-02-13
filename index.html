@@ -8,17 +8,12 @@
     <link href="https://fonts.googleapis.com/css?family=Bellefair&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
-<!-- <video autoplay muted loop id="myVideo">
-  <source src="" type="video/mp4">
-</video> -->
-
-
 </head>
   <body>
     <header>
       <div class="topnav">
         <a class="shuffle">Shuffle</a>
-        <a href="#" class="resetButton">Reset</a>
+        <!-- <a href="#" class="resetButton">Reset</a> -->
         <div class="title">Memory Match</div>
       </div>
     </header>
@@ -33,25 +28,25 @@
           <div>Accuracy</div>
           <div id="numAccuracy">0%</div>
         </div>
-        <div class="modalDiv">
-          <div id="ex1" class="modal">
-          <p>You Win!</p>
-          <a rel="modal:close"></a>
-        </div>
-      </div>
       </aside>
       <main>
         <div class="container">
         </div>
       </main>
     </div>
-    <div class="startModal hidden">
-      <div class="modalContent">
-        <div>Hearthstone Memory Match</div>
-        <div class="startModalClose"></div>
+    <div id="win-modal" class="modal hidden shadow" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          </div>
+          <div class="modal-body">
+            <p>You have won!</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" onclick="closeWinModal()" class="btn btn-close" data-dismiss="modal">Play Again</button>
+          </div>
+        </div>
       </div>
     </div>
-
   </body>
 
 

@@ -6,11 +6,8 @@ var attempts = 0;
 var games_played = 0;
 var max_matches = 9;
 
-
 function intializeApp(){
-
   shuffleAndCreateCards();
-
   var card = $('.card');
   card.off('click');
   card.click(handleCardClick);
@@ -21,7 +18,6 @@ function intializeApp(){
   resetButton.off('click');
   resetButton.on("click", resetGame);
   resetButton.on("click", displayStats);
-
 }
 
 function handleCardClick(event){
@@ -35,34 +31,32 @@ function handleCardClick(event){
     var firstCardImage = firstCardClicked.find('.front').css('background-image');
     var secondCardImage = secondCardClicked.find('.front').css('background-image');
       if(firstCardImage == secondCardImage){
-        console.log("cards match!");
         firstCardClicked = null;
         secondCardClicked = null;
         matches++;
         attempts++;
       } else {
-          console.log("cards did not match!");
           attempts++;
           setTimeout(function() {
             firstCardClicked.removeClass("flip");
             secondCardClicked.removeClass("flip");
             firstCardClicked = null;
             secondCardClicked = null;
-          }, 850);
+          }, 600);
       }
       if(matches === max_matches){
-      openModal();
-      setTimeout(function(){
-        resetStats();
-        $("div.container div").removeClass("flip");
-      });
+      openWinModal();
     }
     displayStats();
   }
 }
 
-function openModal(){
-  setTimeout(function(){$('#ex1').modal()}, 1000);
+function openWinModal(){
+  setTimeout(function(){$('#win-modal').removeClass('hidden')}, 100);
+}
+function closeWinModal(){
+  resetStats();
+  $("#win-modal").addClass('hidden')
 }
 
 function calculateAccuracy(){
@@ -87,16 +81,14 @@ function resetGame(){
   firstCardClicked = null;
   secondCardClicked = null;
   $("div.container div").removeClass("flip");
-  displayStats()
+  displayStats();
 }
 
 function displayStats(){
   var percentAccuracy = calculateAccuracy();
-
   if(!percentAccuracy){
     percentAccuracy = 0;
   }
-
   $("#numGamesPlayed").text(games_played);
   $("#numAttempts").text(attempts);
   $("#numAccuracy").text(percentAccuracy + "%");
@@ -128,7 +120,6 @@ var classArray = [
   "inquisitor",
 ]
 
-
 function shuffleCards(){
   $("div.container div").removeClass("flip");
   setTimeout(function(){
@@ -136,6 +127,7 @@ function shuffleCards(){
     resetStats();
     displayStats();
   }, 350)
+  $('#win-modal').addClass('hidden')
 }
 
 function shuffleAndCreateCards(){
