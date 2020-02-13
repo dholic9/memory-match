@@ -7,9 +7,7 @@ var games_played = 0;
 var max_matches = 9;
 
 function intializeApp(){
-
   shuffleAndCreateCards();
-
   var card = $('.card');
   card.off('click');
   card.click(handleCardClick);
@@ -20,7 +18,6 @@ function intializeApp(){
   resetButton.off('click');
   resetButton.on("click", resetGame);
   resetButton.on("click", displayStats);
-
 }
 
 function handleCardClick(event){
@@ -45,7 +42,7 @@ function handleCardClick(event){
             secondCardClicked.removeClass("flip");
             firstCardClicked = null;
             secondCardClicked = null;
-          }, 850);
+          }, 600);
       }
       if(matches === max_matches){
       openWinModal();
@@ -58,7 +55,6 @@ function openWinModal(){
   setTimeout(function(){$('#win-modal').removeClass('hidden')}, 100);
 }
 function closeWinModal(){
-  console.log('fired')
   resetStats();
   $("#win-modal").addClass('hidden')
 }
@@ -85,17 +81,14 @@ function resetGame(){
   firstCardClicked = null;
   secondCardClicked = null;
   $("div.container div").removeClass("flip");
-
   displayStats();
 }
 
 function displayStats(){
   var percentAccuracy = calculateAccuracy();
-
   if(!percentAccuracy){
     percentAccuracy = 0;
   }
-
   $("#numGamesPlayed").text(games_played);
   $("#numAttempts").text(attempts);
   $("#numAccuracy").text(percentAccuracy + "%");
@@ -126,7 +119,6 @@ var classArray = [
   "inquisitor",
   "inquisitor",
 ]
-
 
 function shuffleCards(){
   $("div.container div").removeClass("flip");
