@@ -391,7 +391,20 @@ and (orientation : landscape) {
   }
 }
 
-/*      IPAD portrait      */
+/**      IPHONE X LANDSCAPE    */
+@media only screen
+and (min-device-width : 375px)
+and (max-device-width : 812px)
+and (orientation : landscape){
+  .title {
+    font-size: 2.5rem;
+  }
+  .topnav {
+    font-size: 1.25rem;
+  }
+}
+
+/**      IPAD portrait      */
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
   body{
@@ -514,7 +527,7 @@ and (orientation : landscape) {
     font-size: 2rem;
   }
   .title{
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
   .statsContainer{
     margin: 0;
@@ -562,7 +575,7 @@ and (orientation : portrait) {
     font-size: 2rem;
   }
   .title{
-    font-size: 3.5rem;
+    font-size: 4.5rem;
   }
   .statsContainer{
     margin: 0;
