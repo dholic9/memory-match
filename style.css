@@ -116,7 +116,8 @@ main{
   top: 27vh;
   flex-direction: row;
   background: rgba(255, 255, 255, 0.95) !important;
-  border: 3px solid rgb(205, 171, 1);
+  border: 5px solid rgb(172, 57, 222);
+  z-index: 1000;
 }
 .shadow {
   -moz-box-shadow:    10px 10px 10px 10px rgb(0, 0, 0) !important;
@@ -126,8 +127,10 @@ main{
 .btn-close {
   border-radius: 5px;
   font-size: 2rem;
-  background: rgb(45, 45, 45);
+  width: 100%;
+  background: rgb(43, 56, 240);
   color: white;
+  cursor: pointer;
 }
 .modal-body {
   justify-content: center;
@@ -184,7 +187,7 @@ main{
 .card:hover{
   transition:transform 0.3s;
   transform: scale(1.1);
-  z-index: 800;
+  z-index: 2;
 }
 
 .back{
