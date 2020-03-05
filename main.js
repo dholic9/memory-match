@@ -159,7 +159,3 @@ function shuffleAndCreateCards(){
     $(".container").append(cardDiv);
   }
 }
-
-function gameStart(){
-  initializeApp();
-}
